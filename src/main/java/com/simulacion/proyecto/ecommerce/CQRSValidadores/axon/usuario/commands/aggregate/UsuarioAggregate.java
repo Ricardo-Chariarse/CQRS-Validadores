@@ -1,7 +1,7 @@
-package com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.commands.aggregate;
+package com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.commands.aggregate;
 
-import com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.commands.command.AgregarUsuarioCommand;
-import com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.commands.events.UsuarioAgregarEvento;
+import com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.commands.command.AgregarUsuarioCommand;
+import com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.commands.events.UsuarioAgregarEvento;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;

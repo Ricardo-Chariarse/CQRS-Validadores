@@ -1,4 +1,4 @@
-package com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.commands.events;
+package com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.commands.events;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

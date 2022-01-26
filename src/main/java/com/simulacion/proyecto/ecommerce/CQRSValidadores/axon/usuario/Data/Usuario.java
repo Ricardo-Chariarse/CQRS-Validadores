@@ -1,4 +1,4 @@
-package com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.Data;
+package com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.Data;
 
 import lombok.Data;
 

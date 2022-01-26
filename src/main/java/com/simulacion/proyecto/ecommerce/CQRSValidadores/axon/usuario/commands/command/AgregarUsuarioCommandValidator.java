@@ -1,4 +1,4 @@
-package com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.commands.command;
+package com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.commands.command;
 
 import br.com.fluentvalidator.AbstractValidator;
 import br.com.fluentvalidator.predicate.StringPredicate;

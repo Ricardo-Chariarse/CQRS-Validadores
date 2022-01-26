@@ -1,7 +1,7 @@
-package com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.commands.events;
+package com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.commands.events;
 
-import com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.Data.Usuario;
-import com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.Data.UsuarioRepository;
+import com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.Data.Usuario;
+import com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.Data.UsuarioRepository;
 import org.axonframework.config.ProcessingGroup;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.BeanUtils;

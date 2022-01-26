@@ -1,10 +1,9 @@
-package com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.commands.controller;
+package com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.compra.commands.controller;
 
-import an.awesome.pipelinr.Pipeline;
+import com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.compra.commands.command.AgregarCompraCommand;
 import com.simulacion.proyecto.ecommerce.CQRSValidadores.model.StatusResponse;
-import com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.commands.command.AgregarUsuarioCommand;
 import org.axonframework.commandhandling.gateway.CommandGateway;
-import org.springframework.context.ApplicationContext;
+import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,24 +15,18 @@ import javax.annotation.Resource;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/usuario")
-public class UsuarioCommandController {
+@RequestMapping("/compra")
+public class CompraCommandController {
 
     @Resource
     private CommandGateway commandGateway;
 
-    @Resource
-    private Pipeline pipeline;
-
-    @Resource
-    private ApplicationContext ctx;
-
-    @PostMapping("/add")
-    public ResponseEntity<StatusResponse> addUsuario(@RequestBody AgregarUsuarioCommand command){
+    @PostMapping("/addCompra")
+    public ResponseEntity<StatusResponse> addCompra(@RequestBody AgregarCompraCommand command){
         String id = UUID.randomUUID().toString();
-        command.setUsuarioId(id);
+        command.setCompraId(id);
         var result = commandGateway.sendAndWait(command);
-        var r = new StatusResponse(true, "Solicitud de creacion enviada",id);
+        var r = new StatusResponse(true, "Compra agregada",id);
         return new ResponseEntity<>(r, HttpStatus.OK);
     }
 

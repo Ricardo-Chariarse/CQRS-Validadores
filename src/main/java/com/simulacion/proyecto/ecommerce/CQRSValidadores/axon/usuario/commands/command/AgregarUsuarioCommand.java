@@ -1,4 +1,4 @@
-package com.simulacion.proyecto.ecommerce.CQRSValidadores.usuario.commands.command;
+package com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.commands.command;
 
 import an.awesome.pipelinr.Command;
 import com.simulacion.proyecto.ecommerce.CQRSValidadores.model.StatusResponse;
