@@ -1,28 +1,24 @@
 package com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.usuario.commands.command;
 
 import br.com.fluentvalidator.AbstractValidator;
-import br.com.fluentvalidator.predicate.StringPredicate;
 
 import static br.com.fluentvalidator.predicate.LogicalPredicate.not;
+import static br.com.fluentvalidator.predicate.StringPredicate.stringEmptyOrNull;
 
-public class AgregarUsuarioCommandValidator extends AbstractValidator<AgregarUsuarioCommand> {
-
+public class ActualizarUsuarioCommandValidator extends AbstractValidator<ActualizarUsuarioCommand> {
     @Override
     public void rules() {
-        setPropertyOnContext("AgregarUsuarioCommandValidator");
-
-        ruleFor(AgregarUsuarioCommand::getNombre)
-                .must(not(StringPredicate.stringEmptyOrNull()))
+        ruleFor(ActualizarUsuarioCommand::getNombre)
+                .must(not(stringEmptyOrNull()))
                 .withMessage("El nombre no debe estar vacio")
                 .withFieldName("nombre");
-        ruleFor(AgregarUsuarioCommand::getApellidos)
-                .must(not(StringPredicate.stringEmptyOrNull()))
+        ruleFor(ActualizarUsuarioCommand::getApellidos)
+                .must(not(stringEmptyOrNull()))
                 .withMessage("El apellido no debe estar vacio")
                 .withFieldName("apellido");
-        ruleFor(AgregarUsuarioCommand::getDni)
-                .must(not(StringPredicate.stringEmptyOrNull()))
+        ruleFor(ActualizarUsuarioCommand::getDni)
+                .must(not(stringEmptyOrNull()))
                 .withMessage("El dni no debe estar vacio")
                 .withFieldName("dni");
-
     }
 }

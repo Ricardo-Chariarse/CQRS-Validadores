@@ -24,5 +24,24 @@ public class UsuarioEventHandler {
             usuarioRepository.save(usuario);
         }
     }
+    @EventHandler
+    public void on(UsuarioActualizarEvento evento){
+        boolean existe = usuarioRepository.existsById(evento.getUsuarioId());
+        if(evento.getUsuarioId() != null && existe){
+            var usuario = usuarioRepository.getById(evento.getUsuarioId());
+            usuario.setNombre(evento.getNombre());
+            usuario.setApellidos(evento.getApellidos());
+            usuario.setCodigoTarjeta(evento.getCodigoTarjeta());
+            usuario.setDni(evento.getDni());
+            usuarioRepository.save(usuario);
+        }
+    }
+    @EventHandler
+    public void on(UsuarioEliminarEvento evento){
+        boolean existe = usuarioRepository.existsById(evento.getUsuarioId());
+        if(existe){
+            usuarioRepository.deleteById(evento.getUsuarioId());
+        }
+    }
 
 }

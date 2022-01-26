@@ -3,7 +3,6 @@ package com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.compra.commands.c
 import com.simulacion.proyecto.ecommerce.CQRSValidadores.axon.compra.commands.command.AgregarCompraCommand;
 import com.simulacion.proyecto.ecommerce.CQRSValidadores.model.StatusResponse;
 import org.axonframework.commandhandling.gateway.CommandGateway;
-import org.springframework.beans.BeanUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
