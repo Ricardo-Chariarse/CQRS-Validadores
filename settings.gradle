@@ -1,0 +1,2 @@
+rootProject.name = 'CRQRS-Validadores'
+include('app')
