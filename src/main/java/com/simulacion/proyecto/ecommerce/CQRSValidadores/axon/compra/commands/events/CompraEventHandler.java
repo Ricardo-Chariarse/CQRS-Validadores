@@ -52,5 +52,34 @@ public class CompraEventHandler {
 
         }
     }
+    @EventHandler
+    private void on(ActualizarCompraEvent event){
+        Compra compra = new Compra();
+        var existe = compraRepository.existsById(event.getCompraId());
+        var existe2 = usuarioRepository.existsById(event.getUsuarioCommand().getUsuarioId());
+        if(existe && existe2){
+            compra.setCompraId(event.getCompraId());
+            compra.setUsuarioId(event.getUsuarioCommand().getUsuarioId());
+            for (AgregarProductoCommand item: event.getProductoCommands()) {
+                if(item.getProductoId() != null){
+                    boolean exist = productoRepositorio.existsById(item.getProductoId());
+                    if(exist){
+                        compra.setProductoId(item.getProductoId());
+                        compra.setCantidad(item.getCantidad());
+                        compra.setNombre(item.getNombre());
+                        compra.setPrecio(item.getPrecio());
+                        compraRepository.save(compra);
+                    }
+                }
+            }
+        }
+    }
+    @EventHandler
+    private void on(EliminarCompraEvent event){
+        var existe = compraRepository.existsById(event.getCompraId());
+        if(existe){
+            compraRepository.deleteById(event.getCompraId());
+        }
+    }
 
 }
